@@ -11,10 +11,6 @@ from torchvision.models.utils import load_state_dict_from_url
 import numpy as np
 from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
-#from .fcn32s import get_upsampling_weight
-import sys
-sys.path.insert(1, '../utils')
-import utils as U
 
 
 ############################
