@@ -228,7 +228,7 @@ def main(config):
     # 4 TRAINER
     # ------------------------
     trainer = pl.Trainer(
-        gpus=2,         #uses only gpu 2
+        gpus=[0],         #uses only gpu 2
         logger=wandb_logger,
         max_epochs=config.epochs,
         accumulate_grad_batches=config.grad_batches,
