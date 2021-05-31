@@ -58,7 +58,7 @@ class Setr(nn.Module):
         score = self.transformer(x)
         score = torch.reshape(score, (bs,self.dim, int(self.trans_img_size/16), int(self.trans_img_size/16)))
 
-        score = self.up(self.bn1(self.relu(self.deconv1(score))))    
+        score = self.up(self.bn1(self.relu(self.deconv1(score))))  
         score = self.up(self.bn2(self.relu(self.deconv2(score)))) 
         score = self.up(self.bn3(self.relu(self.deconv3(score))))
         score = self.up_final(self.bn4(self.relu(self.deconv4(score))))  
