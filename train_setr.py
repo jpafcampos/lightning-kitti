@@ -6,7 +6,7 @@ import torch
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 from PIL import Image
-from models.setr.setr import SETR
+from models.setr.setr import Setr
 from torch.utils.data import DataLoader, Dataset
 
 import pytorch_lightning as pl

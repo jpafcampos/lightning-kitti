@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import models
 import numpy as np
-import .vit
+from . import vit
 
 class Setr(nn.Module):
 
