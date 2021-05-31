@@ -28,7 +28,7 @@ hyperparameter_defaults = dict(
     num_heads = 3,
     bilinear = False,
     grad_batches = 1,
-    epochs = 10
+    epochs = 20
 )
 
 wandb.init(config=hyperparameter_defaults)
@@ -228,7 +228,7 @@ def main(config):
     # 4 TRAINER
     # ------------------------
     trainer = pl.Trainer(
-        gpus=-1,
+        gpus=2,         #uses only gpu 2
         logger=wandb_logger,
         max_epochs=config.epochs,
         accumulate_grad_batches=config.grad_batches,
