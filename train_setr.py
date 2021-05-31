@@ -64,7 +64,7 @@ class KITTI(Dataset):
         self,
         data_path,
         split,
-        img_size=(1242, 376),
+        img_size=(512, 512),
         void_labels=DEFAULT_VOID_LABELS,
         valid_labels=DEFAULT_VALID_LABELS,
         transform=None

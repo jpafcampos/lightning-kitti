@@ -10,7 +10,6 @@ import torch.optim as optim
 from torchvision import models
 import numpy as np
 from . import vit
-
 class Setr(nn.Module):
 
     def __init__(self, num_class, dim, depth, heads, batch_size, trans_img_size, bilinear = False):
