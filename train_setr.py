@@ -147,7 +147,7 @@ class SegModel(pl.LightningModule):
         super().__init__()
         self.lr = hparams.lr
         self.net = Setr(num_class=19, dim=768, depth=hparams.depth, heads=hparams.num_heads, 
-                        batch_size=hparams.batch_size, trans_img_size=14, bilinear = hparams.bilinear)
+                        batch_size=hparams.batch_size, trans_img_size=512, bilinear = hparams.bilinear)
 
     def forward(self, x):
         return self.net(x)
