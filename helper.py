@@ -34,8 +34,8 @@ class semantic_dataset(data.Dataset):
         self.img_path = os.path.join(self.data_path, 'training/image_2')
         self.mask_path = os.path.join(self.data_path, 'training/semantic')
         if self.split == 'train':
-            self.img_path = 'training/image_2/'    
-            self.mask_path = 'training/semantic/'
+            self.img_path = os.path.join(self.data_path, 'training/image_2')   
+            self.mask_path = os.path.join(self.data_path, 'training/semantic')
         self.transform = transform
         
         self.img_list = self.get_filenames(self.img_path)
