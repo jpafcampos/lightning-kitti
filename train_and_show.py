@@ -66,7 +66,7 @@ class SegModel(pl.LightningModule):
 model = SegModel()
 checkpoint_callback = pl.callbacks.ModelCheckpoint(
     dirpath = './',
-    save_best_only = True,
+    save_top_k = [1],
     verbose = True, 
     monitor = 'loss',
     mode = 'min',
