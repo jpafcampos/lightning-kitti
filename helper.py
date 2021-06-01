@@ -30,8 +30,9 @@ class semantic_dataset(data.Dataset):
         self.ignore_index = 250
         self.class_map = dict(zip(self.valid_labels, range(19)))
         self.split = split
-        self.img_path = 'testing/image_2/'
-        self.mask_path = None
+        self.data_path='data_semantics'
+        self.img_path = os.path.join(self.data_path, 'training/image_2')
+        self.mask_path = os.path.join(self.data_path, 'training/semantic')
         if self.split == 'train':
             self.img_path = 'training/image_2/'    
             self.mask_path = 'training/semantic/'
