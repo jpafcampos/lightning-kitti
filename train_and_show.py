@@ -67,8 +67,8 @@ model = SegModel()
 checkpoint_callback = pl.callbacks.ModelCheckpoint(
     dirpath = './',
     save_top_k = [1],
-    verbose = True, 
     monitor = 'loss',
+    verbose = True, 
     mode = 'min'
 )
 trainer = pl.Trainer(gpus = 1, max_nb_epochs = 30, checkpoint_callback = checkpoint_callback, early_stop_callback = None)
