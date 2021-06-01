@@ -69,8 +69,7 @@ checkpoint_callback = pl.callbacks.ModelCheckpoint(
     save_top_k = [1],
     verbose = True, 
     monitor = 'loss',
-    mode = 'min',
-    prefix = ''
+    mode = 'min'
 )
 trainer = pl.Trainer(gpus = 1, max_nb_epochs = 30, checkpoint_callback = checkpoint_callback, early_stop_callback = None)
 trainer.fit(model)
