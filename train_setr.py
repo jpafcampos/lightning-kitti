@@ -24,7 +24,7 @@ DEFAULT_VALID_LABELS = (7, 8, 11, 12, 13, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27
 # Sweep parameters
 hyperparameter_defaults = dict(
     data_path='data_semantics',
-    batch_size = 2,
+    batch_size = 6,
     lr = 1e-2,
     depth = 3,
     num_heads = 3,
@@ -230,9 +230,7 @@ def main(config):
     # 4 TRAINER
     # ------------------------
     trainer = pl.Trainer(
-        gpus=[0], 
-        precision = 16,
-        amp_level = '02',        #standard mixed precision
+        gpus=[0],
         logger=wandb_logger,
         max_epochs=config.epochs,
         accumulate_grad_batches=config.grad_batches,
