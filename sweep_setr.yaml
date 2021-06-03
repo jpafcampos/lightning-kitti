@@ -4,14 +4,6 @@ metric:
   name: val_loss
   goal: minimize
 parameters:
-  batch_size:
-    distribution: int_uniform
-    min: 2
-    max: 6
-  lr:
-    distribution: log_uniform
-    min: -10
-    max: -3
   depth:
     distribution: int_uniform
     min: 1
@@ -20,12 +12,3 @@ parameters:
     distribution: int_uniform
     min: 1
     max: 8
-  bilinear:
-    distribution: categorical
-    values:
-      - True
-      - False
-  grad_batches:
-    distribution: int_uniform
-    min: 1
-    max: 2
