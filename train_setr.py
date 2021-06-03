@@ -233,7 +233,7 @@ def main(config):
     trainer = pl.Trainer(
         gpus=[0], 
         precision = 16,
-        amp_level = '02'        #standard mixed precision
+        amp_level = '02',        #standard mixed precision
         logger=wandb_logger,
         max_epochs=config.epochs,
         accumulate_grad_batches=config.grad_batches,
