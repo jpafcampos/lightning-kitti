@@ -11,7 +11,6 @@ from torch.utils.data import DataLoader, Dataset
 
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import WandbLogger
-import matplotlib.pyplot as plt
 import wandb
 
 from helper import *
@@ -243,29 +242,6 @@ def main(config):
     # 5 START TRAINING
     # ------------------------
     trainer.fit(model, kittiData)
-
-    # ------------------------
-    # 6 SHOW IMAGES
-    # ------------------------
-
-    model.cuda()
-    model.net.eval()
-    testloader = model.test_dataloader()
-    img = next(iter(testloader))
-    img = img.float().cuda()
-    y = model.forward(img)
-    mask_pred = y.cpu().detach().numpy()
-    mask_pred_bw = np.argmax(mask_pred[0], axis = 0)
-
-    unorm = UnNormalize(mean = [0.35675976, 0.37380189, 0.3764753], std = [0.32064945, 0.32098866, 0.32325324])
-    img2 = unorm(img)
-    img2 = img.transpose(1, 2).transpose(2, 3).detach().cpu().numpy()
-
-    fig, axes = plt.subplots(2, 1)
-    axes[0].imshow(img2[0])
-    axes[1].imshow(mask_pred_bw)
-    plt.savefig('output.png')
-    plt.show()
 
 if __name__ == '__main__':
 
