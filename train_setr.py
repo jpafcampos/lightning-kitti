@@ -30,7 +30,7 @@ hyperparameter_defaults = dict(
     num_heads = 3,
     bilinear = False,
     grad_batches = 1,
-    epochs = 20
+    epochs = 60
 )
 
 wandb.init(config=hyperparameter_defaults)
